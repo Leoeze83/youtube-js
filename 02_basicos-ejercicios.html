@@ -34,22 +34,52 @@
       /* 3) Programa una función que dada una String te devuelva un Array de textos separados por cierto caracter, pe.
        miFuncion('hola que tal', ' ') devolverá ['hola', 'que', 'tal'] */
    function convertir(str, separador) {
-      if (typeof (str) == "string") {
-         return str.split(separador)
-      } else {
-         return " No es una cadena de texto";
+         if (typeof (str) == "string") {
+            return str.split(separador)
+         } else {
+            return " No es una cadena de texto";
+         }
       }
-   }
-   // para probar en consola:
-      convertir("Que la fuerza nos acompañe", "*"); 
+      // para probar en consola:
+      convertir("Que la fuerza nos acompañe", "  ,  ")  // devuelve: ["Que la fuerza nos acompañe"] .. no esta tomando el separador
 
 
       /* 4) Programa una función que repita un texto X veces, pe. miFuncion('Hola Mundo', 3) devolverá Hola Mundo Hola Mundo Hola Mundo */
+     function repetir(str, contador) {
+         if (typeof (str) == "string") {
+            return str.repeat(contador);
+
+         } else {
+            return " No es una cadena de texto";
+         }
+      }
+
+      // para probar en consola:
+      repetir("Que la fuerza nos acompañe ", 2)
+      repetir(true, 2)
 
 
 
       /* 5) Programa una función que invierta las palabras de una cadena de texto, pe. miFuncion("Hola Mundo") devolverá "odnuM aloH" */
+      function alReves(str) {
+            if (typeof (str) == "string") {
+               let arreglo = str.split("");
+               let arregloDesord = [];
+               let nuevaCadena = "";
+               for (var i = arreglo.length - 1; i >= 0; i--) {
+                  arregloDesord.push(i);
+               }
+               nuevaCadena = arregloDesord.toString();
+               return nuevaCadena;
 
+            } else {
+               return " No es una cadena de texto";
+            }
+         }
+         // para probar en consola:
+
+         alReves("Vader");
+          alReves( 2);
 
 
       /* 6) Programa una función para contar el número de veces que se repite una palabra en un texto largo, pe. miFuncion("hola mundo adios mundo", "mundo") devolverá 2 */
