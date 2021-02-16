@@ -35,13 +35,15 @@
        miFuncion('hola que tal', ' ') devolverá ['hola', 'que', 'tal'] */
    function convertir(str, separador) {
          if (typeof (str) == "string") {
-            return str.split(separador)
+            let nuevaString="";
+            nuevaString= str.split(separador);
+            return nuevaString;
          } else {
             return " No es una cadena de texto";
          }
       }
       // para probar en consola:
-      convertir("Que la fuerza nos acompañe", "  ,  ")  // devuelve: ["Que la fuerza nos acompañe"] .. no esta tomando el separador
+    //  convertir("Que la fuerza nos acompañe", " ")  
 
 
       /* 4) Programa una función que repita un texto X veces, pe. miFuncion('Hola Mundo', 3) devolverá Hola Mundo Hola Mundo Hola Mundo */
@@ -55,8 +57,8 @@
       }
 
       // para probar en consola:
-      repetir("Que la fuerza nos acompañe ", 2)
-      repetir(true, 2)
+      // repetir("Que la fuerza nos acompañe ", 2)
+      // repetir(true, 2)
 
 
 
@@ -67,7 +69,7 @@
                let arregloDesord = [];
                let nuevaCadena = "";
                for (var i = arreglo.length - 1; i >= 0; i--) {
-                  arregloDesord.push(i);
+                  arregloDesord.push(arreglo[i]);
                }
                nuevaCadena = arregloDesord.toString();
                return nuevaCadena;
@@ -77,13 +79,22 @@
             }
          }
          // para probar en consola:
-
-         alReves("Vader");
-          alReves( 2);
+         // alReves("Vader");
+         // alReves(2);
 
 
       /* 6) Programa una función para contar el número de veces que se repite una palabra en un texto largo, pe. miFuncion("hola mundo adios mundo", "mundo") devolverá 2 */
-
+      function cuantasRepetidas(str, repetida) {
+            let array = str.split(" ");
+            let nuevoArray = [];
+            for (let i = 0; i < array.length; i++) {
+               if (array[i] === repetida) {
+                  nuevoArray.push(array[i]);
+               }
+            } return nuevoArray.length;
+         }
+          // para probar en consola:
+         cuantasRepetidas(" vader luke vader leia vader c3-po", "vader");
 
 
       /* 7) Programa una función que valide si una palabra o frase dada, es un palíndromo (que se lee igual en un sentido que en otro), pe. mifuncion("Salas") devolverá true */
